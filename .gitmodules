@@ -1,0 +1,3 @@
+[submodule "lib/PHPFlow"]
+	path = lib/PHPFlow
+	url = https://github.com/flim/PHPFlow.git
