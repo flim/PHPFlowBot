@@ -1,0 +1,23 @@
+<?php
+
+/*************************************************************
+/* Custom defines - Do what you want, I dont care            *
+/*************************************************************/
+
+DEFINE('BOT_NAME', 'BOT_NAME');
+DEFINE('USER_TOKEN', 'yourultraprivateusrtoken');
+DEFINE('IGNORE_BOT', true);
+DEFINE('VERBOSE_MODE', false);
+DEFINE('PRINT_RECEIVING_EVENT', false); // if VERBOSE_MODE is disabled
+
+
+/*************************************************************
+/* Internal defines - /!\ Only change to match Flowdock API. *
+/*************************************************************/
+
+DEFINE('FLOWDOCK_NEWLINE', "\n");
+DEFINE('FLOW_PATH_SEPARATOR', ":");
+DEFINE('FLOW_PATH_SEPARATOR_FILTER', "/");
+DEFINE('EXTERNAL_USER_ID', 0);
+
+?>

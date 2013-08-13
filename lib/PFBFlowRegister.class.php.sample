@@ -1,0 +1,18 @@
+<?php
+
+require_once __DIR__ . '/PFBBaseFlowRegister.class.php';
+
+/**
+ * @Description List all registered flow
+ * Class Flow
+ */
+class PFBFlowRegister extends PFBBaseFlowRegister
+{
+    static public $flows = array(
+        "customName1" => array("flow" => array("company", "flow1"), "token" => "flow1_token"),
+        "customName2" => array("flow" => array("company", "flow2"), "token" => "flow2_token"),
+        "customName3" => array("flow" => array("company", "flow3"), "token" => "flow3_token"),
+    );
+}
+
+?>
