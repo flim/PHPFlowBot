@@ -240,7 +240,7 @@ class PHPFlowBot
             $flows = json_decode($flowsJson);
             foreach($flows as $f) {
                 PHPFlowBot::$flows[$f->id] = $f;
-                echo "[INFO]   - [".sprintf("%-'.36s", $f->id)."] " . $f->organization . "/" . $f->parameterized_name . PHP_EOL;
+                echo "[INFO]   - [".sprintf("%-'.36s", $f->id)."] " . $f->organization->name . "/" . $f->parameterized_name . PHP_EOL;
             }
             if (VERBOSE_MODE) {
                 print_r(PHPFlowBot::$flows);
