@@ -1,9 +1,6 @@
 <?php
 
 require_once __DIR__ . '/../config/config.php';
-require_once __DIR__ . '/PHPFlow/PHPFlow.class.php';
-require_once __DIR__ . '/PFBFlowRegister.class.php';
-require_once __DIR__ . '/PFBPluginsBasket.class.php';
 
 class PHPFlowBot
 {

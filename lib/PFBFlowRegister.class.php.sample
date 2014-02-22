@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . '/PFBBaseFlowRegister.class.php';
-
 /**
  * @Description List all registered flow
  * Class Flow

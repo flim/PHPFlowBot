@@ -6,15 +6,21 @@ Flowdock API Library in PHP
 PHP Version 5.3.10
 
 ## Installation
-Install composer in the project
+First make ure you have pulled the submodule 'lib/PHPFlow'.
+If not run the following commands
+
+```BASH
+git submodule init
+git submodule update
+```
+
+If you dont have composer installed, install it in the project
+
 ```BASH
 curl -sS https://getcomposer.org/installer | php
 php composer.phar install
 ```
-or you can just remove the require line from the './PHPFlowBot.php'
-```PHP
-require_once __DIR__ . '/vendor/autoload.php';
-```
+
 ## Configuration
 Rename './config/config.php.sample' to './config/config.php'
 and configure it by setting your USER_TOKEN.
@@ -23,6 +29,7 @@ Rename './lib/PFBFlowRegister.class.php.sample' to ./lib/PFBFlowRegister.class.p
 and configure it by adding all channels (flows) you want to use.
 
 Open the file './PHPFlowBot.php'
+
 ```PHP
 // We have to call init before using the class.
 PHPFlowBot::init();
@@ -33,9 +40,11 @@ PHPFlowBot::streamFlow(PFBFlowRegister::$flows);
 ```
 
 ## Run it
+
 ```BASH
 php ./PHPFlowBot.php
 ```
+
 Enjoy!
 
 ## Plugins
@@ -48,8 +57,6 @@ Then implement the 'hook' method which takes one parameter '$input'.
 '$input' is the decoded json message sent by the Flowdock API.
 
 ```PHP
-require_once __DIR__.'/../lib/PFBPlugin.class.php';
-
 class PingPlugin extends PFBPlugin {
 
     function hook($input)
@@ -62,15 +69,12 @@ class PingPlugin extends PFBPlugin {
     }
 }
 ```
+
 ### Enable plugins
 To enable plugins, open the file './lib/PFBPluginsBasket.class.php'.
-Then add the dependency to your plugin class then instantiate your plugin as a new entry in $this->plugins.
-```PHP
-require_once __DIR__ . '/PFBBasePluginsBasket.class.php';
-require_once __DIR__ . '/../plugins/PingPlugin.php';
-require_once __DIR__ . '/../plugins/TestPlugin.php';
-require_once __DIR__ . '/../plugins/ImAlivePlugin.php';
+Then instantiate your plugin as a new entry in $this->plugins.
 
+```PHP
 class PFBPluginsBasket extends PFBBasePluginsBasket
 {
     protected function registerPlugins()

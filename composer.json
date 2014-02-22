@@ -1,4 +1,10 @@
 {
+    "autoload": {
+        "classmap": [
+            "plugins",
+            "lib"
+        ]
+    },
     "require": {
         "php": ">=5.3.10"
     }
