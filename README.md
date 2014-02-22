@@ -18,15 +18,37 @@ If you dont have composer installed, install it in the project
 
 ```BASH
 curl -sS https://getcomposer.org/installer | php
+```
+Then run the install
+```BASH
 php composer.phar install
 ```
 
 ## Configuration
 Rename './config/config.php.sample' to './config/config.php'
-and configure it by setting your USER_TOKEN.
+and configure it by setting your USER_TOKEN and the bot name if you want to.
+```PHP
+DEFINE('BOT_NAME', 'BOT_NAME');
+DEFINE('USER_TOKEN', 'yourultraprivateusrtoken');
+```
 
 Rename './lib/PFBFlowRegister.class.php.sample' to ./lib/PFBFlowRegister.class.php'
 and configure it by adding all channels (flows) you want to use.
+*customName1: a custom name you want to give
+*company: the company name
+*flowN: the flow name
+*flowN_token: the token of the flow
+
+```PHP
+class PFBFlowRegister extends PFBBaseFlowRegister
+{
+    static public $flows = array(
+        "customName1" => array("flow" => array("company", "flow1"), "token" => "flow1_token"),
+        "customName2" => array("flow" => array("company", "flow2"), "token" => "flow2_token"),
+        "customName3" => array("flow" => array("company", "flow3"), "token" => "flow3_token"),
+    );
+}
+```
 
 Open the file './PHPFlowBot.php'
 
